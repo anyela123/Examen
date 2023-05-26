@@ -8,15 +8,15 @@ interface ClaseDao {
     @Query("SELECT * FROM Clase")
     fun getAllClase(): List<Clase>
 
-    @Query("SELECT * FROM Clase WHERE id IN (:claseId)")
+    @Query("SELECT * FROM Clase WHERE id=:claseId")
     fun getClase(claseId: Int): Clase
 
     @Insert
     fun addClase(clase: Clase)
 
     @Delete
-    fun deleteClase(clase: Clase)
+    fun deleteClase(clase:Clase)
 
     @Update
-    fun updateClase( clase: Clase)
+    fun updateClase(clase:Clase)
 }

@@ -8,13 +8,13 @@ interface PlantaDao {
     @Query("SELECT * FROM Planta")
     fun getAllPlanta(): List<Planta>
 
-    @Query("SELECT * FROM Planta WHERE id IN (:plantaId)")
+    @Query("SELECT * FROM Planta WHERE id=:plantaId")
     fun getPlanta(plantaId: Int): Planta
 
-    @Query("SELECT * FROM Planta WHERE id_clase IN (:claseId)")
+    @Query("SELECT * FROM Planta WHERE id_clase=:claseId")
     fun getPlantaClase(claseId: Int): List<Planta?>
 
-    @Query("SELECT * FROM Planta WHERE id_usuario IN (:usuarioId)")
+    @Query("SELECT * FROM Planta WHERE id_usuario=:usuarioId")
     fun getPlantaUsuario(usuarioId: Int): List<Planta?>
 
     @Insert
@@ -24,5 +24,5 @@ interface PlantaDao {
     fun deletePlanta(planta: Planta)
 
     @Update
-    fun updatePlanta( planta: Planta)
+    fun updatePlanta(planta: Planta)
 }
